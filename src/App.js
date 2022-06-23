@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeContextProvider } from './contexts/ThemeContext';
+import ChangeTheme from './components/ChangeTheme';
+import Footer from './components/Footer';
+import { LangContextProvider } from './contexts/LangContext';
+import ChangeLang from './components/ChangeLang';
+import './styles.css'
+import { Container } from './Container';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const  App = () => (
+    <LangContextProvider>
+      <ThemeContextProvider>
+        <Container/>
+      </ThemeContextProvider>
+    </LangContextProvider>
   );
-}
 
 export default App;
